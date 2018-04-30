@@ -8,9 +8,7 @@ Follow instructions on Udacity Project "Get started on Lightsail" page
 Created "olga-first-linux" instance.
 
 # Secure Server
-Update all currently installed packages:
-sudo apt-get update
-sudo python application.py
+Update and Install new versions of all currently installed packages:
+ $ sudo apt-get update
+ $ sudo sudo apt-get upgrade
 
-    
-    sudo apt-get upgrade
