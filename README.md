@@ -10,8 +10,8 @@ Download SSH .pem file and saved it in Vagrant folder
 
 # Secure Server
 Update and Install new versions of all currently installed packages:
-  $ sudo apt-get update 
-  $ sudo sudo apt-get upgrade
+ $ sudo apt-get update 
+ $ sudo sudo apt-get upgrade
  
 Change the SSH port from 22 to 2200
 Set Uncomplicated Firewall (UFW) to only allow incoming connec53
@@ -36,7 +36,7 @@ SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, t
  Copy 
   $ sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader
  And Replace ubuntu with grader using nano editor:
-  $ sudo nano /etc/sudoers.d/grader 
+  $ sudo nano /etc/sudoers.d/grader
  type in grader ALL=(ALL:ALL) ALL, save and quit
  
  # Set ssh login using keys
@@ -237,12 +237,3 @@ Install Git:
    https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
    https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
    https://help.github.com/articles/set-up-git/#platform-linux
-   
-
-
-  
-
- 
-
-   
- 
