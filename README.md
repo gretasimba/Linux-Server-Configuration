@@ -10,7 +10,8 @@ Download SSH .pem file and saved it in Vagrant folder
 
 # Secure Server
 Update and Install new versions of all currently installed packages:
- $ sudo apt-get update 
+
+ $ sudo apt-get update
  $ sudo sudo apt-get upgrade
  
 Change the SSH port from 22 to 2200
