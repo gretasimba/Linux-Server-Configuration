@@ -36,7 +36,7 @@ SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, t
  Copy 
   $ sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader
  And Replace ubuntu with grader using nano editor:
-  $ sudo nano /etc/sudoers.d/grader
+  $ sudo nano /etc/sudoers.d/grader 
  type in grader ALL=(ALL:ALL) ALL, save and quit
  
  # Set ssh login using keys
