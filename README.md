@@ -19,7 +19,7 @@ Set Uncomplicated Firewall (UFW) to only allow incoming connec53
  configure the Lightsail: added Custom TCP 2200 in Networking tab
 
 # Give grader accesstions for SSH (port 2200), HTTP (port 80), and NTP (port 123):
-  $  sudo ufw status (verify inactive)
+$  sudo ufw status (verify inactive)
   $  sudo ufw default deny incoming
   $  sudo ufw default allow outgoing
   $  sudo ufw allow 2200/tcp
