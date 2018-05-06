@@ -17,7 +17,9 @@ Update and Install new versions of all currently installed packages:
  
 Change the SSH port from 22 to 2200
 Set Uncomplicated Firewall (UFW) to only allow incoming connec53
- edit /etc/ssh/sshd_config, changed port to 2200
+ edit /etc/ssh/sshd_config
+ Changed port to 2200 
+ Changed PermitRootLogin from without-password to no
  configure the Lightsail: added Custom TCP 2200 in Networking tab
 
 # Give grader accesstions for SSH (port 2200), HTTP (port 80), and NTP (port 123):
