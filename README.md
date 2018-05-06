@@ -82,6 +82,15 @@ Give grader the permission to sudo.
   Install newer vesions of packages you have:
     
 	$ sudo sudo apt-get upgrade
+
+ # Install the unattended-upgrades package:
+    
+    	$ sudo apt-get install unattended-upgrades
+	
+   Enable the unattended-upgrades package:
+   
+    	$ sudo dpkg-reconfigure -plow unattended-upgrades
+
  
  # Configure the local timezone to UTC
  Run
@@ -289,3 +298,4 @@ Install Git:
    https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
    https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
    https://help.github.com/articles/set-up-git/#platform-linux
+   https://help.ubuntu.com/lts/serverguide/automatic-updates.html
