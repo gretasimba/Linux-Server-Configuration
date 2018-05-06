@@ -1,11 +1,11 @@
 # Linux-Server-Configuration
 This is Linux server installation and preparation to host my Catalog application. I secured the server from a number of attack vectors, installed and configured a Postgres, and deploeyed application onto it.The EC2 URL is 
-http://ec2-18-216-114-52.us-east-2.compute.amazonaws.com and the local IP address is http://18.216.114.52/
+http://ec2-18-220-63-1.us-east-2.compute.amazonaws.com and the local IP address is http://18.220.63.1/
 
 # Ubuntu Linux server
 Started a new Ubuntu Linux server instance on Amazon Lightsail.
 Follow instructions on Udacity Project "Get started on Lightsail" page
-Created "ubuntu-olga" instance.
+Created "ubuntu-olga-1" instance.
 Download SSH .pem file and saved it in Vagrant folder
 
 # Secure Server
@@ -30,7 +30,7 @@ $  sudo ufw status (verify inactive)
   
 # SSH to Server from local Vagrant virtual machine
 SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, the port 2200, the instance user ubuntu and ip address:
-  $ ssh -i PK.pem -p 2200 ubuntu@18.216.114.52
+  $ ssh -i PK.pem -p 2200 ubuntu@18.220.63.1
  Create a new user account named grader with password grader.
   $ sudo adduser grader
  Give grader the permission to sudo.
@@ -57,7 +57,7 @@ SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, t
  reload SSH using service ssh restart
  now  use ssh to login with the new user you created
  from local machine run:
- ssh -i [privateKeyFilename] grader@18.216.114.52
+ ssh -i [privateKeyFilename] -p 2200 grader@18.220.63.1
  
  # Update and upgrade all currently installed packages
   Update the list of available packages and their versions:
@@ -73,7 +73,7 @@ SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, t
  # Install and configure Apache to serve a Python mod_wsgi application
  Install Apache web server:
   $ sudo apt-get install apache2
- Open browser window and run 18.216.114.52 - it should show Ubuntu home page
+ Open browser window and run 18.220.63.1 - it should show Ubuntu home page
  Install mod_wsgi for serving Python apps from Apache and the helper package python-setuptools:
   $ sudo apt-get install python-setuptools libapache2-mod-wsgi
  Restart the Apache server for mod_wsgi to load:
@@ -107,8 +107,8 @@ SSH into the "olga-first-linux" instance, specify the path to .pem (SSH) file, t
  Paste the following:
  
   <VirtualHost *:80>
-   ServerName 18.216.114.52
-   ServerAdmin admin@18.216.114.52
+   ServerName 18.220.63.1
+   ServerAdmin admin@18.220.63.1
    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
    <Directory /var/www/catalog/catalog/>
     Order allow,deny
@@ -211,23 +211,23 @@ Install Git:
    Restart Apache:
      $ sudo service apache2 restart
    Open a browser and put in public ip-address as url
-   18.216.114.52
+   18.220.63.1
    the application should come up
    check the errors in error log file:
      $ sudo tail -20 /var/log/apache2/error.log
      
   # Get OAuth-Logins Working
    Open http://www.hcidata.info/host2ip.cgi and receive the Host name for your public IP-address:
-   for it is ec2-18-216-114-52.us-east-2.compute.amazonaws.com
+   for it is ec2-18-220-63-1.us-east-2.compute.amazonaws.com
    Open the Apache configuration files for the web app: $ sudo vim /etc/apache2/sites-available/catalog.conf
     Paste in the following line below ServerAdmin:
-    ServerAlias http://ec2-18-216-114-52.us-east-2.compute.amazonaws.com
+    ServerAlias http://ec2-18-220-63-1.us-east-2.compute.amazonaws.com
     Enable the virtual host:
     $ sudo a2ensite catalog
     To get the Google+ authorization working:
     Go to the project on the Developer Console: https://console.developers.google.com/project
     Navigate to APIs & auth > Credentials > Edit Settings
-    add http://ec2-18-216-114-52.us-east-2.compute.amazonaws.com and http://18.216.114.52 to Authorized JavaScript origins 
+    add http://ec2-18-216-114-52.us-east-2.compute.amazonaws.com and http://18.220.63.1 to Authorized JavaScript origins 
     and http://ec2-18-216-114-52.us-east-2.compute.amazonaws.com/gconnect to Authorized redirect URIs 
    
    # Resources
